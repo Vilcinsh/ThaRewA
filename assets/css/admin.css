@@ -1,0 +1,62 @@
+.admin-container {
+    max-width: 1100px;
+    margin: 140px auto;
+    padding: 0 20px;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.admin-table th {
+    text-align: left;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.role.admin {
+    color: #ff6b6b;
+    font-weight: 700;
+}
+
+.role.user {
+    color: #a3a3a3;
+}
+
+.admin-form {
+    max-width: 420px;
+}
+
+.admin-form label {
+    display: block;
+    margin-top: 16px;
+    font-weight: 600;
+}
+
+.admin-form input,
+.admin-form select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    background: var(--bg-card);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+}

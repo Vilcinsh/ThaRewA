@@ -1,0 +1,176 @@
+
+[2026-02-04 18:01:30] [FATAL] Cannot declare class Auth, because the name is already in use | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/core/Auth.php","line":4}
+[2026-02-04 18:01:30] [FATAL] Cannot declare class Auth, because the name is already in use | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/core/Auth.php","line":4}
+[2026-02-04 18:01:30] [FATAL] Cannot declare class Auth, because the name is already in use | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/core/Auth.php","line":4}
+[2026-02-04 18:01:30] [FATAL] Cannot declare class Auth, because the name is already in use | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/core/Auth.php","line":4}
+[2026-02-04 18:01:30] [FATAL] Cannot declare class Auth, because the name is already in use | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/core/Auth.php","line":4}
+[2026-02-04 18:01:30] [FATAL] Cannot declare class Auth, because the name is already in use | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/core/Auth.php","line":4}
+[2026-02-04 18:01:30] [FATAL] Cannot declare class Auth, because the name is already in use | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/core/Auth.php","line":4}
+[2026-02-04 18:12:40] [EXCEPTION] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'device_id' in 'where clause' | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php","line":48,"trace":"#0 /var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php(48): PDO->prepare()\n#1 {main}"}
+[2026-02-04 18:12:41] [EXCEPTION] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'device_id' in 'where clause' | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php","line":48,"trace":"#0 /var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php(48): PDO->prepare()\n#1 {main}"}
+[2026-02-04 18:12:48] [EXCEPTION] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'device_id' in 'where clause' | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php","line":48,"trace":"#0 /var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php(48): PDO->prepare()\n#1 {main}"}
+[2026-02-04 18:13:56] [EXCEPTION] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'device_id' in 'where clause' | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php","line":48,"trace":"#0 /var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php(48): PDO->prepare()\n#1 {main}"}
+[2026-02-04 18:13:57] [EXCEPTION] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'device_id' in 'where clause' | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php","line":48,"trace":"#0 /var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php(48): PDO->prepare()\n#1 {main}"}
+[2026-02-04 18:14:40] [EXCEPTION] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'device_id' in 'where clause' | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php","line":48,"trace":"#0 /var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php(48): PDO->prepare()\n#1 {main}"}
+[2026-02-04 18:17:27] [EXCEPTION] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'device_id' in 'where clause' | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php","line":69,"trace":"#0 /var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php(69): PDO->prepare()\n#1 {main}"}
+[2026-02-04 18:19:21] [EXCEPTION] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'device_id' in 'where clause' | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php","line":69,"trace":"#0 /var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php(69): PDO->prepare()\n#1 {main}"}
+[2026-02-04 18:19:51] [PHP] Constant BASE_PATH already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":4,"severity":2}
+[2026-02-04 18:19:51] [FATAL] Cannot redeclare env() (previously declared in /var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/helpers.php:3) | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/helpers.php","line":3}
+[2026-02-04 18:19:56] [PHP] Constant BASE_PATH already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":4,"severity":2}
+[2026-02-04 18:19:56] [FATAL] Cannot redeclare env() (previously declared in /var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/helpers.php:3) | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/helpers.php","line":3}
+[2026-02-04 18:19:57] [PHP] Constant BASE_PATH already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":4,"severity":2}
+[2026-02-04 18:19:57] [FATAL] Cannot redeclare env() (previously declared in /var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/helpers.php:3) | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/helpers.php","line":3}
+[2026-02-04 18:23:53] [EXCEPTION] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'device_id' in 'where clause' | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php","line":59,"trace":"#0 /var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php(59): PDO->prepare()\n#1 {main}"}
+[2026-02-04 18:24:23] [EXCEPTION] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'device_id' in 'where clause' | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php","line":59,"trace":"#0 /var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php(59): PDO->prepare()\n#1 {main}"}
+[2026-02-04 18:24:31] [EXCEPTION] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'device_id' in 'where clause' | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php","line":59,"trace":"#0 /var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/tv/request-code.php(59): PDO->prepare()\n#1 {main}"}
+[2026-02-07 19:55:49] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:55:49] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:55:49] [PHP] Constant MAL_REDIRECT_URI already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":17,"severity":2}
+[2026-02-07 19:55:49] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:55:49] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:55:49] [PHP] Constant MAL_REDIRECT_URI already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":17,"severity":2}
+[2026-02-07 19:55:50] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:55:50] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:55:50] [PHP] Constant MAL_REDIRECT_URI already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":17,"severity":2}
+[2026-02-07 19:56:16] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:56:16] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:56:16] [PHP] Constant MAL_REDIRECT_URI already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":17,"severity":2}
+[2026-02-07 19:56:16] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:56:16] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:56:16] [PHP] Constant MAL_REDIRECT_URI already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":17,"severity":2}
+[2026-02-07 19:56:36] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:56:36] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:56:36] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:56:36] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:56:38] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:56:38] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:56:41] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:56:41] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:56:43] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:56:43] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:56:43] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:56:43] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:56:44] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:56:44] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:56:49] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:56:49] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:56:49] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:56:49] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:57:16] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:57:16] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:57:58] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:57:58] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:57:59] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:57:59] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:58:01] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:58:01] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:58:03] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:58:03] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:58:06] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:58:06] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:58:07] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:58:07] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:58:13] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:58:13] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:59:18] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:59:18] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:59:18] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:59:18] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:59:21] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:59:21] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:59:26] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:59:26] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:59:47] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:59:47] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 19:59:48] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 19:59:48] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:02:08] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:02:08] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:02:23] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:02:23] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:02:23] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:02:23] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:03:17] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:03:17] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:03:17] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:03:17] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:03:36] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:03:36] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:03:36] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:03:36] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:03:36] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:03:36] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:03:39] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:03:39] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:03:39] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:03:39] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:05:10] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:05:10] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:05:11] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:05:11] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:05:11] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:05:11] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:05:13] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:05:13] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:05:24] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:05:24] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:05:27] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:05:27] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:05:27] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:05:27] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:05:28] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:05:28] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:05:37] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:05:37] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:05:37] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:05:37] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:06:31] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:06:31] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:06:33] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:06:33] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:06:43] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:06:43] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:06:44] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:06:44] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:06:45] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:06:45] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:06:46] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:06:46] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:07:25] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:07:25] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:07:25] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:07:25] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:07:27] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:07:27] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:08:03] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:08:03] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:08:03] [PHP] Constant MAL_REDIRECT_URI already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":17,"severity":2}
+[2026-02-07 20:08:03] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:08:03] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:08:03] [PHP] Constant MAL_REDIRECT_URI already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":17,"severity":2}
+[2026-02-07 20:08:11] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:08:11] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:08:11] [PHP] Constant MAL_REDIRECT_URI already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":17,"severity":2}
+[2026-02-07 20:08:16] [PHP] Constant MAL_CLIENT_ID already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":15,"severity":2}
+[2026-02-07 20:08:16] [PHP] Constant MAL_CLIENT_SECRET already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":16,"severity":2}
+[2026-02-07 20:08:16] [PHP] Constant MAL_REDIRECT_URI already defined | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/config/config.php","line":17,"severity":2}
+[2026-02-07 20:25:26] [EXCEPTION] Undefined constant "MAL_CLIENT_ID" | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/start.php","line":35,"trace":"#0 {main}"}
+[2026-02-07 20:25:32] [EXCEPTION] Undefined constant "MAL_CLIENT_ID" | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/start.php","line":35,"trace":"#0 {main}"}
+[2026-02-07 21:19:45] [PHP] Undefined variable $stateColLen | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/callback.php","line":174,"severity":2}
+[2026-02-07 21:19:45] [PHP] Undefined variable $verifierColLen | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/callback.php","line":175,"severity":2}
+[2026-02-07 21:19:45] [PHP] Undefined variable $usedSessionFallback | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/callback.php","line":178,"severity":2}
+[2026-02-07 21:20:02] [PHP] Undefined variable $stateColLen | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/callback.php","line":174,"severity":2}
+[2026-02-07 21:20:02] [PHP] Undefined variable $verifierColLen | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/callback.php","line":175,"severity":2}
+[2026-02-07 21:20:02] [PHP] Undefined variable $usedSessionFallback | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/callback.php","line":178,"severity":2}
+[2026-02-07 21:25:56] [PHP] Undefined variable $stateColLen | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/callback.php","line":174,"severity":2}
+[2026-02-07 21:25:56] [PHP] Undefined variable $verifierColLen | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/callback.php","line":175,"severity":2}
+[2026-02-07 21:25:56] [PHP] Undefined variable $usedSessionFallback | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/callback.php","line":178,"severity":2}
+[2026-02-07 21:26:22] [PHP] Undefined variable $stateColLen | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/callback.php","line":174,"severity":2}
+[2026-02-07 21:26:22] [PHP] Undefined variable $verifierColLen | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/callback.php","line":175,"severity":2}
+[2026-02-07 21:26:22] [PHP] Undefined variable $usedSessionFallback | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/callback.php","line":178,"severity":2}
+[2026-02-07 21:27:54] [PHP] Undefined variable $stateColLen | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/callback.php","line":174,"severity":2}
+[2026-02-07 21:27:54] [PHP] Undefined variable $verifierColLen | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/callback.php","line":175,"severity":2}
+[2026-02-07 21:27:54] [PHP] Undefined variable $usedSessionFallback | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/callback.php","line":178,"severity":2}
+[2026-02-07 21:28:18] [PHP] Undefined variable $stateColLen | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/callback.php","line":174,"severity":2}
+[2026-02-07 21:28:18] [PHP] Undefined variable $verifierColLen | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/callback.php","line":175,"severity":2}
+[2026-02-07 21:28:18] [PHP] Undefined variable $usedSessionFallback | {"file":"/var/www/vhosts/electronic.lv/rew.vissnavslikti.lv/api/connections/mal/callback.php","line":178,"severity":2}
