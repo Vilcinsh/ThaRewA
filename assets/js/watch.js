@@ -384,10 +384,15 @@ function initPlyrPlayer() {
       settings: ['quality', 'speed', 'captions'],
     });
 
-    // Plyr manages its own fullscreen — sync our is-fs class
     window.plyrInstance.on('enterfullscreen', () => {
       document.getElementById('videoContainer')?.classList.add('is-fs');
       buildFsEpisodeOverlay();
+
+    const skipIntro = document.getElementById('skipIntro');
+    const skipOutro = document.getElementById('skipOutro');
+    const container = document.getElementById('videoContainer');
+    if (skipIntro) container.appendChild(skipIntro);
+    if (skipOutro) container.appendChild(skipOutro);
     });
     window.plyrInstance.on('exitfullscreen', () => {
       document.getElementById('videoContainer')?.classList.remove('is-fs');
