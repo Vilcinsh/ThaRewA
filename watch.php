@@ -34,7 +34,7 @@ require __DIR__ . '/modules/header.php';
     'KODIK_API_BASE'    => 'https://kodik.rewcrew.lv',
     'PROXY_BASE'        => 'https://corsproxy.rewcrew.lv/proxy',
     'ANISKIP_API'       => 'https://api.aniskip.com/v2/skip-times',
-    'MERGE_API'         => 'https://api.rewcrew.lv/api/v2/merge',
+    'MERGE_API'         => 'https://proxy.rewcrew.lv/api/marge.php',
     'animeId'           => $animeId,
     'currentEpisode'    => $episodeNumber,
     'autoplay'          => (int)($userSettings['autoplay']            ?? 1),
