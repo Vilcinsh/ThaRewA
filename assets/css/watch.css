@@ -112,7 +112,1658 @@ body {
 
 /* ==============================
    MAIN LAYOUT
+   ============================== *//* ==============================
+   RESET + THEME
    ============================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-red: #dc2626;
+  --dark-red: #991b1b;
+  --light-red: #ef4444;
+
+  --bg-dark: #0a0a0a;
+  --bg-card: #171717;
+  --bg-hover: #262626;
+
+  --text-primary: #ffffff;
+  --text-secondary: #a3a3a3;
+
+  --border-color: #404040;
+
+  /* ===== PLYR PLAYER THEME ===== */
+  --plyr-color-main: #dc2626;
+  --plyr-video-background: rgba(0, 0, 0, 1);
+  --plyr-focus-visible-color: #dc2626;
+  --plyr-badge-background: #262626;
+  --plyr-badge-text-color: #ffffff;
+  --plyr-badge-border-radius: 4px;
+  --plyr-captions-background: rgba(0, 0, 0, 0.9);
+  --plyr-captions-text-color: #ffffff;
+  --plyr-control-icon-size: 18px;
+  --plyr-control-spacing: 10px;
+  --plyr-control-padding: 7px;
+  --plyr-control-radius: 6px;
+  --plyr-control-toggle-checked-background: #dc2626;
+  --plyr-video-controls-background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85));
+  --plyr-video-control-color: #ffffff;
+  --plyr-video-control-color-hover: #ffffff;
+  --plyr-video-control-background-hover: #dc2626;
+  --plyr-audio-controls-background: #171717;
+  --plyr-audio-control-color: #a3a3a3;
+  --plyr-audio-control-color-hover: #ffffff;
+  --plyr-audio-control-background-hover: #dc2626;
+  --plyr-menu-background: rgba(23, 23, 23, 0.95);
+  --plyr-menu-color: #a3a3a3;
+  --plyr-menu-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  --plyr-menu-radius: 8px;
+  --plyr-menu-arrow-size: 6px;
+  --plyr-menu-item-arrow-color: #a3a3a3;
+  --plyr-menu-item-arrow-size: 4px;
+  --plyr-menu-border-color: #404040;
+  --plyr-menu-border-shadow-color: #262626;
+  --plyr-progress-loading-size: 25px;
+  --plyr-progress-loading-background: rgba(35, 40, 47, 0.6);
+  --plyr-video-progress-buffered-background: rgba(255, 255, 255, 0.15);
+  --plyr-audio-progress-buffered-background: rgba(255, 255, 255, 0.2);
+  --plyr-range-thumb-height: 14px;
+  --plyr-range-thumb-background: #ffffff;
+  --plyr-range-thumb-shadow: 0 1px 1px rgba(220, 38, 38, 0.15), 0 0 0 1px rgba(220, 38, 38, 0.2);
+  --plyr-range-thumb-active-shadow-width: 4px;
+  --plyr-range-track-height: 6px;
+  --plyr-range-fill-background: #dc2626;
+  --plyr-video-range-track-background: rgba(255, 255, 255, 0.15);
+  --plyr-video-range-thumb-active-shadow-color: rgba(255, 255, 255, 0.5);
+  --plyr-audio-range-track-background: rgba(255, 255, 255, 0.15);
+  --plyr-audio-range-thumb-active-shadow-color: rgba(220, 38, 38, 0.15);
+  --plyr-tooltip-background: rgba(0, 0, 0, 0.95);
+  --plyr-tooltip-color: #ffffff;
+  --plyr-tooltip-padding: 5px;
+  --plyr-tooltip-arrow-size: 4px;
+  --plyr-tooltip-radius: 6px;
+  --plyr-tooltip-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  --plyr-font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --plyr-font-size-base: 15px;
+  --plyr-font-size-small: 13px;
+  --plyr-font-size-large: 18px;
+  --plyr-font-size-xlarge: 21px;
+  --plyr-font-size-time: 13px;
+  --plyr-font-size-menu: 13px;
+  --plyr-font-size-badge: 10px;
+  --plyr-font-weight-regular: 400;
+  --plyr-font-weight-bold: 600;
+  --plyr-line-height: 1.6;
+  --plyr-font-smoothing: true;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-card);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--dark-red);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-red);
+}
+
+/* ==============================
+   MAIN LAYOUT
+   ============================== */
+
+.watch-container {
+  max-width: 1600px;
+  margin: 80px auto 0;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+}
+
+/* ==============================
+   VIDEO SECTION
+   ============================== */
+
+.video-section {
+  background: var(--bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background: #000;
+}
+
+/* Single source of truth for container positioning */
+#videoContainer {
+  position: absolute;
+  inset: 0;
+}
+
+.video-player {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  z-index: 80;
+  cursor: pointer; /* click-to-toggle play pattern */
+}
+
+/* Custom Video Controls Overlay (if you still use it) */
+.video-overlay-controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  padding: 20px;
+
+  opacity: 0;
+  pointer-events: none; /* IMPORTANT: do not block clicks when hidden */
+  transition: opacity 0.3s;
+  z-index: 110;
+}
+
+.video-wrapper:hover .video-overlay-controls,
+.video-wrapper:focus-within .video-overlay-controls {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Loading State */
+.video-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  z-index: 150;
+  display: none;
+}
+.video-loading.show {
+  display: block;
+}
+
+/* When using an external player hide the legacy custom controls to avoid overlap */
+#videoContainer.use-plyr .player-bottombar,
+#videoContainer.use-plyr .player-center,
+#videoContainer.use-plyr .player-rightbar,
+#videoContainer.use-plyr .pbtn,
+#videoContainer.use-plyr .big-play,
+#videoContainer.use-plyr .seek-wrap,
+#videoContainer.use-plyr .vol-wrap,
+#videoContainer.use-clappr .player-bottombar,
+#videoContainer.use-clappr .player-center,
+#videoContainer.use-clappr .player-rightbar,
+#videoContainer.use-clappr .pbtn,
+#videoContainer.use-clappr .big-play,
+#videoContainer.use-clappr .seek-wrap,
+#videoContainer.use-clappr .vol-wrap,
+#videoContainer.use-videojs .player-bottombar,
+#videoContainer.use-videojs .player-center,
+#videoContainer.use-videojs .player-rightbar,
+#videoContainer.use-videojs .pbtn,
+#videoContainer.use-videojs .big-play,
+#videoContainer.use-videojs .seek-wrap,
+#videoContainer.use-videojs .vol-wrap {
+  display: none !important;
+}
+
+#videoContainer.use-plyr .player-ui.blocked,
+#videoContainer.use-clappr .player-ui.blocked,
+#videoContainer.use-videojs .player-ui.blocked { display: none !important; }
+
+.loading-ring {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  border: 3px solid var(--bg-card);
+  border-top-color: var(--primary-red);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Skip Buttons (base) */
+.skip-button {
+  position: absolute;
+  right: 20px;
+
+  background: var(--primary-red);
+  color: #fff;
+
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+  font-weight: 600;
+
+  display: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+
+  z-index: 250;
+  opacity: 0;
+  pointer-events: none;
+}
+.skip-button:hover {
+  background: var(--light-red);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+}
+.skip-button.show {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* If you have separate IDs for stacking */
+#videoContainer #skipIntro {
+  bottom: 100px;
+}
+#videoContainer #skipOutro {
+  bottom: 45px;
+}
+
+/* Fullscreen helper class (set via JS) */
+#videoContainer.is-fs .skip-button.show {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Hide skip buttons in iframe mode */
+#videoContainer.is-iframe .skip-button {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* ==============================
+   VIDEO INFO
+   ============================== */
+
+.video-info {
+  padding: 25px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.video-meta {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.anime-badge {
+  padding: 6px 12px;
+  background: var(--primary-red);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.anime-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.episode-title {
+  font-size: 18px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.episode-title::before {
+  content: "";
+  width: 3px;
+  height: 18px;
+  background: var(--primary-red);
+  border-radius: 2px;
+}
+
+/* ==============================
+   SERVER SELECTION
+   ============================== */
+
+.servers {
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.servers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.subs-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: var(--bg-hover);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.subs-control label {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.subs-control select {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 6px 28px 6px 10px;
+  font-weight: 600;
+  font-size: 12px;
+  outline: none;
+  appearance: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.subs-control select:focus {
+  border-color: var(--primary-red);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+.servers-header .quality-indicator {
+  gap: 12px;
+}
+
+.servers-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.quality-indicator {
+  display: flex;
+  gap: 8px;
+}
+
+.quality-badge {
+  padding: 4px 10px;
+  background: var(--dark-red);
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.server-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.server-btn {
+  padding: 12px;
+  background: var(--bg-hover);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.server-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(220, 38, 38, 0.2),
+    transparent
+  );
+  transition: width 0.3s;
+}
+
+.server-btn:hover {
+  border-color: var(--primary-red);
+  transform: translateY(-2px);
+}
+
+.server-btn:hover::before {
+  width: 100%;
+}
+
+.server-btn.active {
+  background: var(--primary-red);
+  border-color: var(--primary-red);
+  color: #fff;
+}
+
+/* Server badges (NOTE: one ::after per button; avoid combining sub+dub+rus classes on same element) */
+.server-btn.sub::after,
+.server-btn.dub::after,
+.server-btn.rus::after {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.server-btn.sub::after {
+  content: "SUB";
+  background: #3498db;
+}
+
+.server-btn.dub::after {
+  content: "DUB";
+  background: #f39c12;
+}
+
+.server-btn.rus::after {
+  content: "RUS";
+  background: #27ae60;
+}
+
+/* Optional "Russian server" skin (if used separately from .rus badge) */
+.server-btn.russian {
+  background: linear-gradient(135deg, #c03 0%, #e05 100%);
+  border-color: #c03;
+}
+.server-btn.russian:hover {
+  background: linear-gradient(135deg, #d04 0%, #f06 100%);
+}
+
+.server-header {
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 10px 0 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ==============================
+   NAV CONTROLS
+   ============================== */
+
+.nav-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid var(--border-color);
+}
+
+.nav-btn {
+  padding: 14px;
+  background: var(--bg-hover);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: var(--primary-red);
+  border-color: var(--primary-red);
+  transform: translateY(-2px);
+}
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* ==============================
+   SIDEBAR
+   ============================== */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Episodes Section */
+.episodes-section {
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.episodes-header {
+  padding: 20px;
+  background: rgba(220, 38, 38, 0.05);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.episodes-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.episode-count {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.episodes-container {
+  padding: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.episode-btn {
+  padding: 12px;
+  background: var(--bg-hover);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+}
+
+.episode-btn:hover {
+  background: rgba(220, 38, 38, 0.1);
+  border-color: var(--primary-red);
+  transform: scale(1.05);
+}
+
+.episode-btn.active {
+  background: var(--primary-red);
+  border-color: var(--primary-red);
+  color: #fff;
+}
+
+.episode-btn.active::after {
+  content: "►";
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  font-size: 10px;
+}
+
+/* Anime Details */
+.anime-details {
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.details-header {
+  padding: 20px;
+  background: rgba(220, 38, 38, 0.05);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.details-content {
+  padding: 20px;
+}
+
+.details-grid {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-label {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.detail-value {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.synopsis {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+/* ==============================
+   TOAST ERROR
+   ============================== */
+
+.error-toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--dark-red);
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 2000;
+  animation: slideUp 0.3s ease;
+}
+.error-toast.show {
+  display: block;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ==============================
+   SHORTCUTS HINT
+   ============================== */
+
+.shortcuts-hint {
+  padding: 15px;
+  background: rgba(220, 38, 38, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.shortcuts-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.shortcut-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 13px;
+}
+
+.shortcut-key {
+  padding: 2px 8px;
+  background: var(--bg-hover);
+  border-radius: 4px;
+  font-family: monospace;
+  color: var(--primary-red);
+}
+
+/* ==============================
+   NEXT EPISODE OVERLAY
+   ============================== */
+
+.next-episode-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.85)
+  );
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 170;
+  backdrop-filter: blur(0.1px);
+}
+.next-episode-overlay.show {
+  display: flex;
+}
+
+.next-episode-box {
+  background: linear-gradient(180deg, var(--bg-card), var(--bg-dark));
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 28px 32px;
+  min-width: 280px;
+  max-width: 90%;
+  text-align: center;
+  animation: nextFadeUp 0.35s ease-out;
+}
+
+.next-episode-box p {
+  margin: 0 0 18px;
+  font-size: 16px;
+  color: var(--text-primary);
+  letter-spacing: 0.3px;
+}
+
+#nextCountdown {
+  color: var(--primary-red);
+  font-weight: 700;
+  font-size: 26px;
+  margin-left: 4px;
+}
+
+.next-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.next-actions button:first-child {
+  background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s;
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.4);
+}
+.next-actions button:first-child:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(220, 38, 38, 0.55);
+}
+
+.next-actions button:last-child {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.next-actions button:last-child:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+@keyframes nextFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==============================
+   RESUME OVERLAY (CONTINUE WATCHING)
+   ============================== */
+
+.resume-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.75)
+  );
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 160;
+  backdrop-filter: blur(0.1px);
+}
+.resume-overlay.show {
+  display: flex;
+}
+
+.resume-box {
+  background: linear-gradient(180deg, var(--bg-card), var(--bg-dark));
+  border-radius: 16px;
+  padding: 26px 30px;
+  min-width: 260px;
+  max-width: 90%;
+  text-align: center;
+  animation: resumeFadeUp 0.3s ease-out;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.resume-box p {
+  margin: 0 0 18px;
+  font-size: 15px;
+  color: var(--text-primary);
+  letter-spacing: 0.3px;
+}
+
+#resumeTime {
+  color: var(--primary-red);
+  font-weight: 700;
+}
+
+.resume-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.resume-actions button:first-child {
+  background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 8px 22px rgba(220, 38, 38, 0.45);
+}
+.resume-actions button:first-child:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(220, 38, 38, 0.6);
+}
+
+.resume-actions button:last-child {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.resume-actions button:last-child:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+@keyframes resumeFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Mobile resume layout */
+@media (max-width: 480px) {
+  .resume-box {
+    padding: 22px;
+  }
+  .resume-actions {
+    flex-direction: column;
+  }
+  .resume-actions button {
+    width: 100%;
+  }
+}
+
+/* ==============================
+   SCREENSHOTS SECTION + MODAL
+   ============================== */
+
+.screenshots-section {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.screenshot-thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.screenshot-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.screenshot-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.screenshot-modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close-modal:hover {
+  color: var(--primary-red); /* FIX: removed undefined --accent */
+}
+
+/* ==============================
+   FULLSCREEN PLAYER OVERLAYS
+   ============================== */
+
+/* Ensure overlays render above native controls */
+#videoContainer .player-overlay-btn,
+#videoContainer .fs-episodes,
+#videoContainer .panel {
+  z-index: 180;
+}
+
+/* Plyr episodes button (only show in fullscreen to avoid clutter) */
+.plyr__controls .plyr-episodes-btn {
+  display: none;
+}
+
+.plyr--fullscreen .plyr__controls .plyr-episodes-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 14px;
+}
+.plyr__controls .plyr-episodes-btn i {
+  pointer-events: none;
+}
+
+/* Episodes toggle button (fullscreen only) */
+.player-overlay-btn {
+  position: absolute;
+  left: 20px;
+  bottom: 45px;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease,
+    border-color 0.15s ease;
+  backdrop-filter: blur(6px);
+}
+.player-overlay-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(220, 38, 38, 0.75);
+  background: rgba(0, 0, 0, 0.55);
+}
+/* Always show if force-show class is present */
+.player-overlay-btn.force-show {
+  display: inline-flex;
+}
+#videoContainer.is-fs .player-overlay-btn {
+  display: inline-flex;
+}
+
+/* ==============================
+   PLAYER UI (CUSTOM CONTROLS)
+   ============================== */
+
+.player-ui {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.22s ease;
+}
+.player-ui.is-hidden {
+  opacity: 0;
+}
+.player-ui .pbtn,
+.player-ui .big-play,
+.player-ui .panel,
+.player-ui .player-bottombar,
+.player-ui .player-rightbar,
+.player-ui .seek-wrap,
+.player-ui .vol-wrap {
+  pointer-events: auto;
+}
+
+/* When resume overlay is visible, hide controls */
+.player-ui.blocked {
+  opacity: 0 !important;
+}
+
+/* Bottom bar */
+.player-bottombar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.75) 70%,
+    transparent 100%
+  );
+  z-index: 110;
+  pointer-events: auto;
+}
+
+/* Time group */
+.time-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  min-width: 110px;
+}
+.time {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  user-select: none;
+}
+.time-separator {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+}
+
+/* Seek bar */
+.seek-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  padding: 8px 0;
+}
+.seek {
+  width: 100%;
+  height: 4px;
+  appearance: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+  outline: none;
+  cursor: pointer;
+  transition: height 0.15s ease;
+}
+.seek:hover {
+  height: 6px;
+}
+
+/* thumb hidden until hover */
+.seek::-webkit-slider-thumb {
+  appearance: none;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: var(--primary-red);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.6);
+  cursor: grab;
+  transition: width 0.15s ease, height 0.15s ease;
+}
+.seek::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: var(--primary-red);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.6);
+  cursor: grab;
+  border: none;
+  transition: width 0.15s ease, height 0.15s ease;
+}
+.seek:hover::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+}
+.seek:hover::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+}
+
+/* Progress fill visualization (set --seek-progress via JS) */
+.seek-wrap::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  height: 4px;
+  background: var(--primary-red);
+  border-radius: 999px;
+  pointer-events: none;
+  width: var(--seek-progress, 0%);
+  transition: height 0.15s ease;
+}
+.seek-wrap:hover::before {
+  height: 6px;
+}
+
+/* Seek tooltip */
+.seek-tooltip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  transform: translateX(-50%);
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  display: none;
+  white-space: nowrap;
+  pointer-events: none;
+  font-variant-numeric: tabular-nums;
+}
+.seek-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.9);
+}
+.seek-tooltip.show {
+  display: block;
+}
+
+/* Volume */
+.vol-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.vol {
+  width: 0;
+  height: 4px;
+  appearance: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+  outline: none;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+  transition: width 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+}
+.vol-wrap:hover .vol,
+.vol-wrap:focus-within .vol {
+  width: 80px;
+  opacity: 1;
+  transform: scaleX(1);
+  pointer-events: auto;
+}
+.vol::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--primary-red);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.6);
+  cursor: grab;
+}
+.vol::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--primary-red);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.6);
+  cursor: grab;
+  border: none;
+}
+
+/* Right controls group */
+.player-rightbar {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* Buttons */
+.pbtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+.pbtn:hover {
+  transform: scale(1.05);
+  border-color: var(--primary-red);
+  background: rgba(0, 0, 0, 0.7);
+}
+.pbtn:active {
+  transform: scale(0.95);
+}
+
+/* Big play */
+.player-center {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 100;
+}
+.big-play {
+  width: 76px;
+  height: 76px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  backdrop-filter: blur(6px);
+  transition: transform 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+}
+.big-play:hover {
+  transform: scale(1.05);
+  border-color: var(--primary-red);
+}
+
+/* Settings panel */
+.panel {
+  position: absolute;
+  right: 14px;
+  bottom: 132px;
+  width: 280px;
+  background: rgba(23, 23, 23, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 14px;
+  display: none;
+  backdrop-filter: blur(10px);
+  z-index: 180;
+  pointer-events: auto;
+}
+.panel.show {
+  display: block;
+}
+.panel-title {
+  font-weight: 900;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 10px;
+}
+.panel-row {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+}
+.panel-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 700;
+}
+.panel-select {
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #fff;
+  outline: none;
+}
+
+/* ==============================
+   FS EPISODES (FULLSCREEN OVERLAY VERSION)
+   ============================== */
+
+.fs-episodes {
+  position: absolute;
+  inset: 0;
+  display: none;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.9)
+  );
+  backdrop-filter: blur(7px);
+  padding: 18px;
+
+  z-index: 180;
+  pointer-events: auto;
+}
+.fs-episodes.show {
+  display: block;
+}
+
+.fs-episodes-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.fs-episodes-close {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+.fs-episodes-close:hover {
+  border-color: rgba(220, 38, 38, 0.75);
+}
+
+.fs-episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+  gap: 10px;
+  max-height: calc(100% - 60px);
+  overflow: auto;
+  padding-right: 6px;
+}
+
+.fs-episodes-grid .ep {
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(23, 23, 23, 0.88);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+}
+.fs-episodes-grid .ep:hover {
+  transform: translateY(-1px);
+  border-color: rgba(220, 38, 38, 0.75);
+  background: rgba(38, 38, 38, 0.9);
+}
+.fs-episodes-grid .ep.active {
+  background: var(--primary-red);
+  border-color: var(--primary-red);
+}
+
+/* ==============================
+   IFRAME MODE (Kodik etc.)
+   ============================== */
+
+#videoContainer.is-iframe .player-bottombar,
+#videoContainer.is-iframe .player-center {
+  display: none;
+}
+#videoContainer.is-iframe .skip-button {
+  display: none !important;
+}
+
+/* ==============================
+   PLYR MARKERS STYLING
+   ============================== */
+
+.plyr__markers {
+  height: 100% !important;
+}
+
+.plyr__marker {
+  background: var(--primary-red) !important;
+  width: 2px !important;
+  opacity: 0.8 !important;
+  transition: all 0.2s ease !important;
+}
+
+.plyr__marker:hover {
+  opacity: 1 !important;
+  background: var(--light-red) !important;
+  width: 3px !important;
+}
+
+.plyr__marker-label {
+  background: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--primary-red) !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6) !important;
+  white-space: nowrap !important;
+}
+
+/* ==============================
+   FULLSCREEN EPISODE SWITCHING IMPROVEMENTS
+   ============================== */
+
+@media (max-width: 768px) {
+  .fs-episodes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  }
+
+  .fs-episodes-grid .ep {
+    height: 40px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .fs-episodes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  }
+
+  .fs-episodes-grid .ep {
+    height: 36px;
+    font-size: 11px;
+  }
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media (max-width: 1200px) {
+  .watch-container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .episodes-container {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-center {
+    display: none;
+  }
+
+  .anime-title {
+    font-size: 20px;
+  }
+
+  .episodes-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .server-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .shortcuts-hint {
+    display: none;
+  }
+
+  /* Player responsive */
+  .player-bottombar {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .time {
+    font-size: 11px;
+  }
+
+  .time-group {
+    min-width: 90px;
+    gap: 6px;
+  }
+
+  .pbtn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .vol-wrap:hover .vol {
+    width: 60px;
+  }
+
+  .player-rightbar {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 520px) {
+  .player-overlay-btn {
+    left: 12px;
+    bottom: 12px;
+  }
+
+  #videoContainer #skipIntro {
+    right: 12px;
+    bottom: 86px;
+    padding: 10px 16px;
+  }
+  #videoContainer #skipOutro {
+    right: 12px;
+    bottom: 40px;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .episodes-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 
 .watch-container {
   max-width: 1600px;

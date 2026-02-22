@@ -1,0 +1,211 @@
+# ============================================================
+#  ThatRewAnim — Production .htaccess
+# ============================================================
+
+Options -Indexes -MultiViews
+
+# ============================================================
+#  REWRITE ENGINE
+# ============================================================
+
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Remove trailing slash (except root)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# Canonical www → non-www (swap these if you prefer www)
+# RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+# RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+# ── Static assets: serve directly, never rewrite ─────────────────────────────
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# ── Clean URL → .php (single segment: /watch → watch.php) ────────────────────
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)$ /$1.php [L,QSA]
+
+# ── Clean URL → .php (two segments: /admin/users → admin/users.php) ──────────
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+/[^/]+)$ /$1.php [L,QSA]
+
+
+# ============================================================
+#  COMPRESSION  (mod_deflate)
+# ============================================================
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+    AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/json application/xml application/xhtml+xml
+    AddOutputFilterByType DEFLATE image/svg+xml font/ttf font/otf font/woff font/woff2
+    AddOutputFilterByType DEFLATE application/font-woff application/font-woff2
+
+    # Don't compress already-compressed formats
+    SetEnvIfNoCase Request_URI \
+        \.(?:gif|jpe?g|png|webp|avif|mp4|webm|m3u8|ts|gz|zip|rar|7z|br)$ \
+        no-gzip dont-vary
+
+    Header append Vary Accept-Encoding env=!no-gzip
+</IfModule>
+
+
+# ============================================================
+#  BROWSER CACHING  (mod_expires)
+# ============================================================
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # Default fallback
+    ExpiresDefault                          "access plus 1 month"
+
+    # HTML — short cache, always revalidate
+    ExpiresByType text/html                 "access plus 0 seconds"
+    ExpiresByType application/xhtml+xml     "access plus 0 seconds"
+
+    # CSS / JS — long cache, use query-string busting (?v=x) in code
+    ExpiresByType text/css                  "access plus 1 year"
+    ExpiresByType application/javascript    "access plus 1 year"
+    ExpiresByType text/javascript           "access plus 1 year"
+
+    # Images
+    ExpiresByType image/jpeg                "access plus 1 year"
+    ExpiresByType image/png                 "access plus 1 year"
+    ExpiresByType image/gif                 "access plus 1 year"
+    ExpiresByType image/webp                "access plus 1 year"
+    ExpiresByType image/avif                "access plus 1 year"
+    ExpiresByType image/svg+xml             "access plus 1 year"
+    ExpiresByType image/x-icon              "access plus 1 year"
+    ExpiresByType image/vnd.microsoft.icon  "access plus 1 year"
+
+    # Fonts
+    ExpiresByType font/ttf                  "access plus 1 year"
+    ExpiresByType font/otf                  "access plus 1 year"
+    ExpiresByType font/woff                 "access plus 1 year"
+    ExpiresByType font/woff2                "access plus 1 year"
+    ExpiresByType application/font-woff     "access plus 1 year"
+    ExpiresByType application/font-woff2    "access plus 1 year"
+
+    # Video / HLS — short cache so updated playlists are picked up fast
+    ExpiresByType application/vnd.apple.mpegurl  "access plus 5 seconds"
+    ExpiresByType video/mp2t                     "access plus 1 hour"
+    ExpiresByType video/mp4                      "access plus 1 week"
+    ExpiresByType video/webm                     "access plus 1 week"
+
+    # Data
+    ExpiresByType application/json          "access plus 0 seconds"
+    ExpiresByType application/xml           "access plus 0 seconds"
+    ExpiresByType text/xml                  "access plus 0 seconds"
+</IfModule>
+
+
+# ============================================================
+#  CACHE-CONTROL HEADERS  (mod_headers)
+# ============================================================
+
+<IfModule mod_headers.c>
+
+    # HTML — always revalidate
+    <FilesMatch "\.(html|php)$">
+        Header set Cache-Control "no-cache, must-revalidate"
+        Header unset Pragma
+    </FilesMatch>
+
+    # Static assets — immutable long cache
+    <FilesMatch "\.(css|js|woff2?|ttf|otf|eot)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    <FilesMatch "\.(jpe?g|png|gif|webp|avif|svg|ico)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # HLS playlists — must never be cached by CDN/proxy
+    <FilesMatch "\.m3u8$">
+        Header set Cache-Control "no-store, no-cache, must-revalidate"
+        Header set Pragma "no-cache"
+    </FilesMatch>
+
+    # TS segments — short CDN cache is fine
+    <FilesMatch "\.ts$">
+        Header set Cache-Control "public, max-age=3600"
+    </FilesMatch>
+
+
+    # ── Security headers ──────────────────────────────────────────────────────
+
+    # Prevent clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Prevent MIME sniffing
+    Header always set X-Content-Type-Options "nosniff"
+
+    # XSS filter (legacy browsers)
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Referrer policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions policy — disable what you don't need
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+
+    # HSTS — enable only after you are 100% on HTTPS
+    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+    # Remove server fingerprint headers
+    Header unset X-Powered-By
+    Header always unset Server
+
+</IfModule>
+
+
+# ============================================================
+#  ETAG  — disable server ETags (use cache-control instead)
+# ============================================================
+
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
+
+
+# ============================================================
+#  PROTECT SENSITIVE FILES
+# ============================================================
+
+# Block direct access to config / dot files / logs
+<FilesMatch "^(\.env|\.git|composer\.(json|lock)|config\.php|.*\.log)$">
+    Require all denied
+</FilesMatch>
+
+# Block access to hidden directories (.git, .svn, etc.)
+RewriteRule ^\.(?!well-known) - [F,L]
+
+# Prevent PHP execution inside uploads folder
+<IfModule mod_php.c>
+    <Directory uploads>
+        php_flag engine off
+    </Directory>
+</IfModule>
+
+
+# ============================================================
+#  LIMIT REQUEST SIZE  (protect against large upload abuse)
+# ============================================================
+
+LimitRequestBody 52428800
+
+
+# ============================================================
+#  CHARSET
+# ============================================================
+
+AddDefaultCharset UTF-8

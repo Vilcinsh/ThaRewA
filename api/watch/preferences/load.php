@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../../config/config.php';
+require __DIR__ . '/../../../config/config.php';
 require BASE_PATH . '/core/Guard.php';
 
 header('Content-Type: application/json');

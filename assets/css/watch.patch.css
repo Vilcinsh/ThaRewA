@@ -1,0 +1,188 @@
+#videoContainer #skipIntro,
+#videoContainer #skipOutro {
+  right: 20px;
+  z-index: 9999;      
+  display: none;           
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#videoContainer #skipIntro  { bottom: 80px; }
+#videoContainer #skipOutro  { bottom: 140px; }
+#videoContainer #skipIntro.show,
+#videoContainer #skipOutro.show {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#videoContainer.is-fs #skipIntro  { bottom: 90px; }
+#videoContainer.is-fs #skipOutro  { bottom: 150px; }
+.player-overlay-btn {
+  position: absolute;
+  bottom: auto;
+  left: auto;
+
+  top: 14px;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.player-overlay-btn:hover {
+  background: rgba(220, 38, 38, 0.75);
+  border-color: var(--primary-red);
+  transform: scale(1.05);
+}
+
+#btnEpisodes {
+  right: 14px;
+}
+
+#btnSubtitles {
+  right: 64px !important; 
+}
+
+#videoContainer.is-fs .player-overlay-btn {
+  display: inline-flex;
+}
+
+.fs-episodes {
+  position: absolute;
+  inset: 0;
+  z-index: 10000;         
+  pointer-events: auto;
+  display: none;
+  flex-direction: column;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+}
+
+.fs-episodes.show {
+  display: flex;
+}
+
+.fs-episodes-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.fs-episodes-close {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.fs-episodes-close:hover {
+  border-color: var(--primary-red);
+  background: rgba(220, 38, 38, 0.2);
+}
+
+.fs-episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(58px, 1fr));
+  gap: 10px;
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--dark-red) transparent;
+}
+.fs-episodes-grid::-webkit-scrollbar       { width: 5px; }
+.fs-episodes-grid::-webkit-scrollbar-thumb { background: var(--dark-red); border-radius: 4px; }
+
+.fs-episodes-grid .ep {
+  height: 46px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(23, 23, 23, 0.85);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease, transform 0.12s ease;
+}
+.fs-episodes-grid .ep:hover {
+  background: rgba(220, 38, 38, 0.25);
+  border-color: rgba(220, 38, 38, 0.6);
+  transform: translateY(-1px);
+}
+.fs-episodes-grid .ep.active {
+  background: var(--primary-red);
+  border-color: var(--primary-red);
+}
+
+#fsSubtitles {
+  max-width: 280px;
+  left: auto;
+  right: 0;
+}
+#fsSubtitles .fs-episodes-grid {
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+#fsSubtitles .fs-episodes-grid .ep {
+  height: 40px;
+  font-size: 13px;
+  text-align: left;
+  padding: 0 14px;
+}
+
+#fsSubtitles.show::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  right: 280px;
+  background: transparent;
+  pointer-events: auto;
+}
+
+
+#videoContainer.is-iframe .skip-button {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 768px) {
+  #videoContainer #skipIntro  { bottom: 70px;  right: 12px; padding: 8px 14px; font-size: 13px; }
+  #videoContainer #skipOutro  { bottom: 124px; right: 12px; padding: 8px 14px; font-size: 13px; }
+
+  .player-overlay-btn         { width: 36px; height: 36px; top: 10px; }
+  #btnEpisodes                { right: 10px; }
+  #btnSubtitles               { right: 54px !important; }
+
+  #fsSubtitles                { max-width: 220px; }
+}
+
+@media (max-width: 480px) {
+  .fs-episodes-grid           { grid-template-columns: repeat(auto-fill, minmax(46px, 1fr)); gap: 8px; }
+  .fs-episodes-grid .ep       { height: 40px; font-size: 12px; }
+}
