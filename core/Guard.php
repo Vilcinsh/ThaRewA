@@ -7,6 +7,7 @@ class Guard
 {
     public static function auth(): void
     {
+        Auth::initSession();
         if (!Auth::check()) {
             header('Location: /landing.php');
             exit;

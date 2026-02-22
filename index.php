@@ -2,6 +2,7 @@
 require __DIR__ . '/config/config.php';
 require BASE_PATH . '/core/Auth.php';
 
+Auth::initSession();
 Auth::requireAuth();
 
 $headerType = 'home';

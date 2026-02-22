@@ -2,6 +2,8 @@
 require __DIR__ . '/config/config.php';
 require BASE_PATH . '/core/Guard.php';
 
+Auth::initSession();
+
 if (!Auth::check()) {
     header('Location: landing.php');
     exit;
